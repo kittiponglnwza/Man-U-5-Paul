@@ -236,7 +236,7 @@ def render_sidebar(ctx=None):
             <div class="nx-logo-block">
                 <div ></div>
                 <div class="nx-logo-text">แมนยู<em>5</em>พอลล</div>
-                <div class="nx-version">⚡ &nbsp;Nexus Engine &nbsp;v9.0</div>
+                <div class="nx-version">⚡ &nbsp;dek cs kubb</div>
             </div>
         """, unsafe_allow_html=True)
 
@@ -275,16 +275,42 @@ def render_sidebar(ctx=None):
             </div>
         """, unsafe_allow_html=True)
 
-        stabilize_on = bool(ctx and ctx.get('stabilize_connected'))
-        if stabilize_on:
-            cfg = ctx.get('stabilize_settings', {})
-            t_home = cfg.get('t_home')
-            t_draw = cfg.get('t_draw')
-            selected_profile = ctx.get('stabilize_selected_profile')
-            st.caption('STABILIZE linked (monitoring only).')
-            if selected_profile:
-                st.caption(f"profile: {selected_profile}")
-            if t_home is not None and t_draw is not None:
-                st.caption(f"report thresholds: home={float(t_home):.3f}, draw={float(t_draw):.3f}")
-        else:
-            st.caption('STABILIZE report not found.')
+        st.markdown("""
+            <style>
+            .nx-contact-block {
+                padding: 12px 20px 8px;
+            }
+            .nx-contact-header {
+                font-family: 'Rajdhani', sans-serif;
+                font-size: 0.58rem;
+                font-weight: 700;
+                letter-spacing: 3.5px;
+                text-transform: uppercase;
+                color: rgba(148, 187, 233, 0.35);
+                margin-bottom: 8px;
+            }
+            .nx-contact-item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-family: 'Rajdhani', sans-serif;
+                font-size: 0.75rem;
+                font-weight: 600;
+                color: rgba(148, 187, 233, 0.55);
+                margin-bottom: 6px;
+                letter-spacing: 0.5px;
+            }
+            .nx-contact-item a {
+                color: #38BDF8;
+                text-decoration: none;
+            }
+            .nx-contact-item a:hover {
+                color: #F0F6FF;
+            }
+            </style>
+            <div class="nx-contact-block">
+                <div class="nx-contact-header">Contact</div>
+                <div class="nx-contact-item">📧 <a href="mailto:kitipongzaza566@gmail.com">kitipongzaza566@gmail.com</a></div>
+                <div class="nx-contact-item">📸 <a href="https://instagram.com/kt_k1tt1111" target="_blank">@kt_k1tt1111</a></div>
+            </div>
+        """, unsafe_allow_html=True)

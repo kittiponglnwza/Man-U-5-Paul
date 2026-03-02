@@ -581,7 +581,7 @@ def page_season(ctx):
         st.write("")
 
         b1, b2, _ = st.columns([1.2, 1.2, 2], gap="medium")
-        run_btn  = b1.button("🔮  Run Simulation", type="primary",
+        run_btn  = b1.button(" Run Simulation", type="primary",
                              use_container_width=True, key="btn_run")
         sync_btn = b2.button("↺  Sync Data",
                              use_container_width=True, key="btn_sync")

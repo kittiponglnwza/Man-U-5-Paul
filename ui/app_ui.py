@@ -96,7 +96,7 @@ def _ensure_runtime_prediction_consistency(ctx):
 
 # ── 1. Page Config ────────────────────────────────────────────
 st.set_page_config(
-    page_title="Football AI | Nexus Engine",
+    page_title="Football AI | แมนยู 5 พอลล",
     page_icon="⚡",
     layout="wide",
     initial_sidebar_state="expanded",

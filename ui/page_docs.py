@@ -72,8 +72,8 @@ _CSS = """<style>
 
 /* Card */
 .doc-card {
-    background:rgba(255,255,255,.03);
-    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.15);
     border-radius:14px; padding:28px 32px; margin-bottom:20px;
 }
 .doc-card-title {
@@ -82,7 +82,7 @@ _CSS = """<style>
 }
 .doc-card-body {
     font-family:'DM Sans',sans-serif; font-size:.95rem;
-    color:rgba(148,187,233,.7); line-height:1.85;
+    color:rgba(148,187,233,.85); line-height:1.85;
 }
 
 /* Tag pills */
@@ -95,14 +95,14 @@ _CSS = """<style>
 
 /* Metrics */
 [data-testid="stMetric"] {
-    background:rgba(255,255,255,.03) !important;
-    border:1px solid rgba(255,255,255,.08) !important;
+    background:rgba(255,255,255,.07) !important;
+    border:1px solid rgba(255,255,255,.15) !important;
     border-radius:14px !important; padding:22px 24px !important;
 }
 [data-testid="stMetricLabel"] {
     font-family:'DM Sans',sans-serif !important; font-size:.72rem !important;
     letter-spacing:2.5px !important; text-transform:uppercase !important;
-    color:rgba(148,187,233,.36) !important;
+    color:rgba(148,187,233,.55) !important;
 }
 [data-testid="stMetricValue"] {
     font-family:'Syne',sans-serif !important;
@@ -181,11 +181,11 @@ def _tab_system():
 
     flow_html = (
         f'<html><head><style>{_GF}*{{margin:0;padding:0;box-sizing:border-box;}}'
-        f'html,body{{background:#060F1C;overflow:visible;width:100%;}}</style></head><body>'
-        f'<div style="background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);'
+        f'html,body{{background:transparent;overflow:hidden;width:100%;height:100%;}}</style></head><body>'
+        f'<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);'
         f'border-radius:14px;padding:24px 28px;">{"".join(parts)}</div></body></html>'
     )
-    components.html(flow_html, height=len(steps) * 78 + 48, scrolling=False)
+    components.html(flow_html, height=len(steps) * 72 + 48, scrolling=False)
 
     _divider("Tech Stack")
     tags = [
@@ -254,10 +254,10 @@ def _tab_dataset():
             f'<li style="margin-bottom:4px;">{f}</li>' for f in feats
         )
         st.markdown(
-            f'<div class="doc-card" style="border-left:4px solid {color};">'
+            f'<div class="doc-card" style="border-left:4px solid {color};background:rgba(255,255,255,.07);border-color-left:{color};border:1px solid rgba(255,255,255,.15);border-left:4px solid {color};">'
             f'<div class="doc-card-title" style="color:{color};font-size:1rem;">{group_name}</div>'
             f'<ul style="font-family:\'DM Sans\',sans-serif;font-size:.9rem;'
-            f'color:rgba(148,187,233,.7);line-height:1.8;padding-left:18px;">{items}</ul>'
+            f'color:rgba(200,220,255,.85);line-height:1.8;padding-left:18px;">{items}</ul>'
             f'</div>',
             unsafe_allow_html=True,
         )
@@ -350,9 +350,9 @@ def _tab_model():
 
     table_html = (
         f'<html><head><style>{_GF}*{{margin:0;padding:0;box-sizing:border-box;}}'
-        f'html,body{{background:#060F1C;overflow:visible;width:100%;}}'
+        f'html,body{{background:transparent;overflow:hidden;width:100%;height:100%;}}'
         f'table{{width:100%;border-collapse:collapse;}}</style></head><body>'
-        f'<div style="background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);'
+        f'<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);'
         f'border-radius:14px;overflow:hidden;">'
         f'<table>'
         f'<thead><tr>'
@@ -365,7 +365,7 @@ def _tab_model():
         f'<tbody>{rows_html}</tbody>'
         f'</table></div></body></html>'
     )
-    components.html(table_html, height=50 + len(compare_rows) * 52 + 16, scrolling=False)
+    components.html(table_html, height=44 + len(compare_rows) * 48 + 4, scrolling=False)
 
 
 # ═══════════════════════════════════════════════════════════════

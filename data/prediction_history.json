@@ -29,10 +29,10 @@
     "d_prob": 21.1,
     "a_prob": 38.2,
     "pred_winner": "Home",
-    "real_score": null,
-    "real_winner": null,
-    "score_correct": null,
-    "winner_correct": null,
+    "real_score": "2-1",
+    "real_winner": "Home",
+    "score_correct": false,
+    "winner_correct": true,
     "saved_at": "2026-02-28T21:53:08.848488+00:00"
   },
   {
@@ -47,10 +47,10 @@
     "d_prob": 17.5,
     "a_prob": 32.3,
     "pred_winner": "Home",
-    "real_score": null,
-    "real_winner": null,
-    "score_correct": null,
-    "winner_correct": null,
+    "real_score": "2-1",
+    "real_winner": "Home",
+    "score_correct": false,
+    "winner_correct": true,
     "saved_at": "2026-02-28T21:53:08.931071+00:00"
   },
   {
@@ -65,10 +65,10 @@
     "d_prob": 16.7,
     "a_prob": 18.9,
     "pred_winner": "Home",
-    "real_score": null,
-    "real_winner": null,
-    "score_correct": null,
-    "winner_correct": null,
+    "real_score": "2-1",
+    "real_winner": "Home",
+    "score_correct": true,
+    "winner_correct": true,
     "saved_at": "2026-02-28T21:53:09.008559+00:00"
   },
   {
@@ -88,5 +88,23 @@
     "score_correct": null,
     "winner_correct": null,
     "saved_at": "2026-02-28T21:53:09.083450+00:00"
+  },
+  {
+    "key": "Wolves_vs_Liverpool_04/03/2026",
+    "match_id": null,
+    "home": "Wolves",
+    "away": "Liverpool",
+    "date": "04/03/2026",
+    "time": "03:15",
+    "pred_score": "0-1",
+    "h_prob": 11.5,
+    "d_prob": 28.1,
+    "a_prob": 60.4,
+    "pred_winner": "Away",
+    "real_score": null,
+    "real_winner": null,
+    "score_correct": null,
+    "winner_correct": null,
+    "saved_at": "2026-03-02T09:03:48.045738+00:00"
   }
 ]

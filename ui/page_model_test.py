@@ -59,14 +59,14 @@ _CSS = """<style>
 
 /* Metrics */
 [data-testid="stMetric"] {
-    background:rgba(255,255,255,.03) !important;
-    border:1px solid rgba(255,255,255,.08) !important;
+    background:rgba(255,255,255,.07) !important;
+    border:1px solid rgba(255,255,255,.15) !important;
     border-radius:14px !important; padding:22px 24px !important;
 }
 [data-testid="stMetricLabel"] {
     font-family:'DM Sans',sans-serif !important; font-size:.72rem !important;
     letter-spacing:2.5px !important; text-transform:uppercase !important;
-    color:rgba(148,187,233,.36) !important;
+    color:rgba(148,187,233,.55) !important;
 }
 [data-testid="stMetricValue"] {
     font-family:'Syne',sans-serif !important;
@@ -167,11 +167,16 @@ def _cm_html(cm, classes, title: str, accent: str) -> str:
     )
     td_label = (
         "font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:700;"
-        "color:rgba(148,187,233,.55);padding:10px 16px;text-align:right;white-space:nowrap;"
+        "color:rgba(148,187,233,.55);padding:10px 16px;text-align:center;white-space:nowrap;"
     )
 
+    col_w = f'width:{100//(n+1)}%;'
+    colgroup = (
+        f'<colgroup><col style="{col_w}"></colgroup>'
+        + "".join(f'<col style="{col_w}">' for _ in labels)
+    )
     header = (
-        f'<tr><th style="{th_style}">Actual \\ Pred</th>'
+        f'<tr><th style="{th_style};text-align:center;">Actual \\ Pred</th>'
         + "".join(f'<th style="{th_style}">{l}</th>' for l in labels)
         + "</tr>"
     )
@@ -212,13 +217,13 @@ def _cm_html(cm, classes, title: str, accent: str) -> str:
     html = (
         f'<html><head><style>{_GF}'
         f'*{{margin:0;padding:0;box-sizing:border-box;}}'
-        f'html,body{{background:#060F1C;overflow:hidden;width:100%;}}'
+        f'html,body{{background:transparent;overflow:hidden;width:100%;}}'
         f'table{{width:100%;border-collapse:collapse;}}</style></head><body>'
-        f'<div style="background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);'
+        f'<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);'
         f'border-radius:14px;overflow:hidden;">'
         f'<div style="padding:16px 20px 8px;font-family:\'Syne\',sans-serif;font-size:1rem;'
         f'font-weight:800;color:{accent};">{title}</div>'
-        f'<table><thead>{header}</thead><tbody>{rows_html}</tbody></table>'
+        f'<table>{colgroup}<thead>{header}</thead><tbody>{rows_html}</tbody></table>'
         f'</div></body></html>'
     )
     h = 60 + 50 + (n + 1) * 60
@@ -273,9 +278,9 @@ def _metrics_table_html(per_class: dict, title: str, accent: str) -> str:
     html = (
         f'<html><head><style>{_GF}'
         f'*{{margin:0;padding:0;box-sizing:border-box;}}'
-        f'html,body{{background:#060F1C;overflow:hidden;width:100%;}}'
+        f'html,body{{background:transparent;overflow:hidden;width:100%;}}'
         f'table{{width:100%;border-collapse:collapse;}}</style></head><body>'
-        f'<div style="background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);'
+        f'<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);'
         f'border-radius:14px;overflow:hidden;">'
         f'<div style="padding:16px 20px 8px;font-family:\'Syne\',sans-serif;font-size:1rem;'
         f'font-weight:800;color:{accent};">{title}</div>'
@@ -399,9 +404,9 @@ def _tab_ensemble(ctx):
         )
     tbl = (
         f'<html><head><style>{_GF}*{{margin:0;padding:0;box-sizing:border-box;}}'
-        f'html,body{{background:#060F1C;overflow:hidden;width:100%;}}'
+        f'html,body{{background:transparent;overflow:hidden;width:100%;}}'
         f'table{{width:100%;border-collapse:collapse;}}</style></head><body>'
-        f'<div style="background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);'
+        f'<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);'
         f'border-radius:14px;overflow:hidden;">'
         f'<table><thead><tr>'
         f'<th style="{TH};text-align:left;">Component</th>'
@@ -469,8 +474,8 @@ def _tab_neural(ctx):
         )
     arch_html = (
         f'<html><head><style>{_GF}*{{margin:0;padding:0;box-sizing:border-box;}}'
-        f'html,body{{background:#060F1C;overflow:hidden;width:100%;}}</style></head><body>'
-        f'<div style="background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);'
+        f'html,body{{background:transparent;overflow:hidden;width:100%;}}</style></head><body>'
+        f'<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);'
         f'border-radius:14px;overflow:hidden;">{"".join(parts)}</div></body></html>'
     )
     components.html(arch_html, height=len(arch_items) * 52 + 8, scrolling=False)
@@ -554,9 +559,9 @@ def _tab_compare(ctx):
         )
     tbl_html = (
         f'<html><head><style>{_GF}*{{margin:0;padding:0;box-sizing:border-box;}}'
-        f'html,body{{background:#060F1C;overflow:hidden;width:100%;}}'
+        f'html,body{{background:transparent;overflow:hidden;width:100%;}}'
         f'table{{width:100%;border-collapse:collapse;}}</style></head><body>'
-        f'<div style="background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);'
+        f'<div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);'
         f'border-radius:14px;overflow:hidden;">'
         f'<table><thead><tr>'
         f'<th style="{TH};text-align:left;">Model</th>'
