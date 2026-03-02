@@ -606,9 +606,9 @@ def page_model_test(ctx=None):
         return
 
     tab1, tab2, tab3 = st.tabs([
-        "  🤖 ML Ensemble  ",
-        "  🧠 Neural Network  ",
-        "  ⚖️ Compare  ",
+        "   ML Ensemble  ",
+        "   Neural Network  ",
+        "   Compare  ",
     ])
 
     with tab1:
