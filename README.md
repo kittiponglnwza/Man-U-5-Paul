@@ -3,6 +3,8 @@
 ระบบวิเคราะห์และทำนายผลฟุตบอล Premier League ด้วย Machine Learning + Neural Networks
 รันด้วย Streamlit · Python 3.10+
 
+https://man-u-5-paul-cowbyy6cxcr7if3fxrsdtz.streamlit.app/
+
 ---
 
 # 🗂 Dataset (ชุดข้อมูลและตัวแปรที่ใช้)
