@@ -513,7 +513,7 @@ def page_fixtures(ctx):
     st.markdown("""
         <div class="fx-page-header">
             <div class="fx-eyebrow">Nexus Engine · Premier League</div>
-            <div class="fx-title">Next <em>Fixtures</em></div>
+            <div class="fx-title">Next <em>Match</em></div>
             <div class="fx-subtitle">Upcoming matches with AI win probability &amp; score prediction</div>
         </div>
     """, unsafe_allow_html=True)

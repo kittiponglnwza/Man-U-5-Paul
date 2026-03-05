@@ -250,7 +250,7 @@ def render_sidebar(ctx=None):
         nav_icons = {
             "Overview":      "  Overview",
             "Predict Match": "  Predict Match",
-            "Next Fixtures": "  Next Fixtures",
+            "Next Fixtures": "  Next Match",
             "Season Table":  "  Season Table",
             "Docs":          "  Docs",
             "Model Test":    "  Model Testing",
